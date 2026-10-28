@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberShield Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span class="logo-icon">🛡️</span>
+            <span>CyberShield</span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item active">
+                <span>🏠</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#urlScanner" class="nav-item">
+                <span>🔗</span>
+                <span>URL Scanner</span>
+            </a>
+
+            <a href="#emailAnalyzer" class="nav-item">
+                <span>📧</span>
+                <span>Email Analyzer</span>
+            </a>
+
+            <a href="#messageAnalyzer" class="nav-item">
+                <span>💬</span>
+                <span>Message Analyzer</span>
+            </a>
+
+            <a href="#scanHistory" class="nav-item">
+                <span>📋</span>
+                <span>Scan History</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#settings" class="nav-item">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item" id="logoutButton">
+                <span>🚪</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="dashboard-main">
+
+        <!-- TOP HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Cybersecurity &amp; Phishing Detection</p>
+            </div>
+
+            <div class="user-info">
+
+                <div class="user-avatar">
+                    👤
+                </div>
+
+                <div>
+                    <strong id="userName">User</strong>
+                    <small id="userEmail">user@example.com</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             WELCOME SECTION
+        ========================== -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <h2>
+                    Welcome back,
+                    <span id="welcomeName">User</span> 👋
+                </h2>
+
+                <p>
+                    Protect yourself from phishing, malicious URLs,
+                    suspicious emails and cyber threats.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔍
+                </div>
+
+                <div>
+                    <p>Total Scans</p>
+                    <h2 id="totalScans">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🟢
+                </div>
+
+                <div>
+                    <p>Safe</p>
+                    <h2 id="safeScans">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🟡
+                </div>
+
+                <div>
+                    <p>Suspicious</p>
+                    <h2 id="suspiciousScans">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔴
+                </div>
+
+                <div>
+                    <p>High Risk</p>
+                    <h2 id="highRiskScans">0</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             URL SCANNER
+        ========================== -->
+
+        <section
+            class="content-section scanner-section"
+            id="urlScanner"
+        >
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    🔗
+                </div>
+
+                <div>
+
+                    <h2>URL Scanner</h2>
+
+                    <p>
+                        Analyze a URL for phishing and malicious indicators.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="scanner-card">
+
+                <label for="urlInput">
+                    Enter a website URL
+                </label>
+
+
+                <div class="scanner-form">
+
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="scanButton"
+                    >
+                        Scan URL
+                    </button>
+
+                </div>
+
+
+                <p class="scanner-help">
+                    CyberShield analyzes URL characteristics
+                    and calculates a security risk score.
+                </p>
+
+            </div>
+
+
+            <!-- SCAN RESULT -->
+
+            <div id="scanResult"></div>
+
+        </section>
+
+<!-- =========================
+     EMAIL ANALYZER
+========================== -->
+
+<section
+    class="content-section scanner-section"
+    id="emailAnalyzer"
+>
+    <div class="section-title">
+        <div class="section-title-icon">📧</div>
+
+
+    <div>
+        <h2>Email Analyzer</h2>
+        <p>Analyze suspicious emails for phishing indicators.</p>
+    </div>
+</div>
+
+<div class="scanner-card">
+    <label for="emailInput">Paste the email subject and body</label>
+
+    <textarea
+        id="emailInput"
+        rows="8"
+        maxlength="20000"
+        placeholder="Paste a suspicious email here..."
+        style="width: 100%; box-sizing: border-box; padding: 14px; margin-top: 10px; border-radius: 8px; resize: vertical;"
+    ></textarea>
+
+    <div style="margin-top: 16px;">
+        <button type="button" id="emailScanButton">
+            Analyze Email
+        </button>
+    </div>
+
+    <p class="scanner-help">
+        CyberShield checks email content and embedded URLs for
+        configured phishing indicators. Avoid pasting real passwords,
+        OTPs, or other sensitive personal information.
+    </p>
+</div>
+
+<div id="emailScanResult" aria-live="polite"></div>
+
+</section>
+
+       
+
+
+
+
+
+        <!-- =========================
+             SCAN HISTORY
+        ========================== -->
+
+        <section
+            class="content-section"
+            id="scanHistory"
+        >
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <h2>Recent Scans</h2>
+
+                    <p>
+                        Your latest security analysis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Type</th>
+                                <th>Input</th>
+                                <th>Result</th>
+                                <th>Risk Score</th>
+                                <th>Date</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="scanHistoryBody">
+
+                            <tr>
+
+                                <td colspan="5" class="empty-history">
+                                    No scans yet.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SETTINGS
+        ========================== -->
+
+        <section
+            class="content-section coming-soon-section"
+            id="settings"
+        >
+
+            <div class="section-title">
+
+                <div class="section-title-icon">
+                    ⚙️
+                </div>
+
+                <div>
+
+                    <h2>Settings</h2>
+
+                    <p>
+                        Manage your CyberShield account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="coming-soon-card">
+
+                <div class="coming-soon-icon">
+                    ⚙️
+                </div>
+
+                <h3>Account Settings</h3>
+
+                <p>
+                    Account and security settings will be added later.
+                </p>
+
+                <span class="coming-soon-badge">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 CyberShield —
+                AI-Powered Cybersecurity &amp; Phishing Detection
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

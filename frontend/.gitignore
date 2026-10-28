@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+backend/venv/
+
+# Environment variables
+.env
+
+# Machine learning
+*.pkl
+*.joblib
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+backend/venv/
+
+# Environment variables
+.env
+
+# Machine learning
+*.pkl
+*.joblib
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
